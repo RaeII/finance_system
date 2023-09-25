@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style/login.css">
+    <title>Login</title>
+</head>
+<body>  
+  <form id="login-form">
+
+    <svg class="logo">
+        <use xlink:href="#logo">
+    </svg>
+   
+    <h1>VIGILIAN</h1>
+    <h1>Gestão de chamados e anomalias</h1>
+    <div id="error-login"></div>
+    <div class="input email">
+        <input id='email' type="text" placeholder=" ">
+        <label>Usuário</label>
+    </div>
+
+    <div class="input password">
+        <div class="dots"></div>
+        <input type="password" placeholder=" ">
+        <label>Senha</label>
+        <div class="cursor"></div>
+        <span></span>
+        <div class="tick">
+            <svg>
+                <use xlink:href="#tick">
+            </svg>
+        </div>
+    </div>
+
+    <button type="submit" disabled>
+        <svg viewBox="0 0 16 16">
+            <circle stroke-opacity=".1" cx="8" cy="8" r="6"></circle>
+            <circle class="load" cx="8" cy="8" r="6"></circle>
+        </svg>
+        <span>Entrar</span>
+    </button>
+
+  </form>
+    
+  <script src="./assets/script/jquery/jquery.js"></script>
+  <script src="./assets/script/index.js"></script>
+  <script src="./assets/script/login.js"></script>
+</body>
+</html>

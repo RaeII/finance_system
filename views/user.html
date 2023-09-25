@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/style/bootstrap/bootstrap5.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style/dashboard.css">
+    <link rel="stylesheet" href="./assets/style/mytable.css">
+    <link rel="stylesheet" href="./assets/style/user.css">
+    <title>Usuários</title>
+</head>
+<body>  
+  <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+    <div class="sidebar-header">
+      <div class="ms-2">
+        <div class="logo"><img src="./assets/images/logo.png" alt=""></div>
+        <h5 class="fs-6 mb-0">
+          <a class="text-decoration-none" id="user-name-sidebar" href="#"></a><span id="exit-vigilian">Sair</span>
+        </h5>
+        <p class="">Bem vindo</p>
+      </div>
+    </div>
+  
+    <div class="search position-relative text-center px-4 py-3 mt-2">
+    </div>
+  
+    <ul class="categories list-unstyled">
+      <a href="home">
+        <li class="has-dropdown">
+          <i class="icofont-home"></i> Dashboard
+        </li>
+      </a>
+      <a href="ticket">
+        <li class="">
+          <i class="icofont-warning-alt"></i> Chamados
+        </li>
+      </a>
+      <a href="problem" >
+        <li class="has-dropdown">
+          <i class="icofont-warning"></i> Anomalias
+        </li>
+      </a>
+
+      <a href="user" id="user-menu">
+        <li class="has-dropdown">
+          <i class="icofont-group"></i> Usuários
+        </li>
+      </a>
+     
+    </ul>
+    <img id="monkey" alt="Monkey-Branch" src="./assets/images/monkey.png">
+  </aside>
+      
+      <section id="wrapper">
+        <div class="p-4">
+          <div class="welcome">
+            <div class="content rounded-3 p-3">
+              <h1 class="fs-3">Usuários</h1>
+              <p class="mb-0"></p>
+            </div>
+          </div>
+      
+            <div id="content-loading">
+         
+            <div class="tweet">
+              <div class="skeleton">
+                 <div class="skeleton-avatar"></div>
+                 <div class="tweet-content">
+                    <div class="tweet-header">
+                       <div class="skeleton-line heading" style="width: 60%"></div>
+                    </div>
+                    <div class="tweet-text">
+                       <div class="skeleton-line" style="width: 90%"></div>
+                       <div class="skeleton-line" style="width: 100%"></div>
+                       <div class="skeleton-line" style="width: 35%"></div>
+                    </div>
+                    
+                    <div class="skeleton-img"></div>
+                 
+                    <div class="tweet-footer">
+                       <div class="skeleton-button rounded"></div>
+                       <div class="skeleton-button rounded"></div>
+                       <div class="skeleton-button rounded"></div>
+                       <div class="skeleton-button rounded"></div>
+                    </div>
+                 </div> 
+              </div>
+           </div> 
+     
+          </div>
+
+          <section>
+            <div class="container-table">
+
+              <div class="content-filters">
+                <button id="add-user">+ Adicionar usuário</button>
+              </div>
+
+              <div id="filter-item">
+                
+              </div>
+              
+              <span id="cont-table">
+                <table id="table">
+            
+                    <thead >
+                        <tr>
+                          <!-- <th  id="checkbox-main"><input onchange="removeclickCheckBoxMain(this)" class="input-export-main" type="checkbox"></th> -->
+                          <th>Id <i class="icofont-rounded-up i-thead"></i></i></th>
+                          <th>Usuário <i class="icofont-rounded-up i-thead"></i></i></th>
+                          <th>E-mail <i class="icofont-rounded-up i-thead"></i></i></th>
+                          <th>Telefone<i class="icofont-rounded-up i-thead"></i></i></th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-list">
+                      
+                    </tbody>
+                </table>
+              </span>
+              
+              <div id="cont-modal">
+            
+                  <form class="form-in" action="#" id="signup" method="post" enctype="multipart/form-data">
+                      <h3>Novo usuário</h3>
+                      <span id="close-form-user"><i class="icofont-close-circled"></i></span>
+                      <div class="error-form-user"></div>
+                      <div class="error" id="error"></div>
+                      <label for="nome">Nome</label>
+                      <input type="text" id='user_name' name="user_name" placeholder="Nome Completo" maxlength="100" required value="">
+
+                      <label for="email">E-mail</label>
+                      <input type="email" name="email" id='email' placeholder="Email" maxlength="120" required value="">
+      
+                      <label for="phone">Telefone</label>
+                      <input type="phone" name="phone" required id="phone" placeholder="(99) 99999999" maxlength="13" value='' required>
+      
+                      <div class="forma-data-glpi">
+                        <div>
+                          <label for="nome">Usuário glpi</label>
+                          <select required name="glpi_user_id" id="glpi_user_id">
+                            <option value="0">Selecione o usuário</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label for="nome">Setor glpi</label>
+                          <select required name="glpi_group_id" id="glpi_group_id">
+                            <option value="0">Selecione o setor</option>
+                          </select>
+                        </div>
+                      </div>
+                      
+                      <label for="">Permissões</label>
+                      <div class="permissions">
+                        
+                        <input type="checkbox" name="is_admin" id="is_admin" value="1">
+                        <label for="is_admin">Admin</label>
+                      </div>
+                      <p id="change-password"><u>Trocar senha</u></p>
+                      <div id="cont-pass">
+                        <div id="password-inputs">
+                          <label for="password">Senha</label>
+                          <input required id="pass" class="pass-user" type="password" name="password">
+                          <label for="confirm-password">Confirmar senha</label>
+                          <input required type="password" class="pass-user" id="password-confirm" name="confirm-password">
+                        </div>
+                      </div>
+                      <input type="hidden" id="user_id" value="0">
+                      
+                      <div id="buttons-form">
+                        <button type="submit" class="btn-signup" id='btn'>Cadastrar</button>
+                      </div>
+                  </form>
+
+              </div>
+
+        </div>
+      </section>
+      <div id="alert-success" class="alert-success"></div>
+      <script src="./assets/script/jquery/jquery.js"></script>
+      <script src="./assets/script/jquery/mask.js"></script>
+      <script src="./assets/script/index.js"></script>
+      <script src="./assets/script/userLogin.js"></script>  
+      <script src="./assets/script/user.js"></script>
+</body> 
+</html>

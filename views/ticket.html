@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/style/bootstrap/bootstrap5.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style/dashboard.css">
+    <link rel="stylesheet" href="./assets/style/mytable.css">
+    <title>Chamados</title>
+</head>
+<body>  
+  <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+    <div class="sidebar-header">
+      <!-- <i class="icofont-user-alt-7"></i> -->
+      <div class="ms-2">
+        <div class="logo"><img src="./assets/images/logo.png" alt=""></div>
+        <h5 class="fs-6 mb-0">
+          <a class="text-decoration-none" id="user-name-sidebar" href="#"></a><span id="exit-vigilian">Sair</span>
+        </h5>
+        <p class="">Bem vindo</p>
+      </div>
+    </div>
+  
+    <div class="search position-relative text-center px-4 py-3 mt-2">
+    </div>
+  
+    <ul class="categories list-unstyled">
+      <a href="home">
+        <li class="has-dropdown">
+          <i class="icofont-home"></i> Dashboard
+        </li>
+      </a>
+      <a href="ticket">
+        <li class="">
+          <i class="icofont-warning-alt"></i> Chamados
+        </li>
+      </a>
+      <a href="problem" >
+        <li class="has-dropdown">
+          <i class="icofont-warning"></i> Anomalias
+        </li>
+      </a>
+      <a href="user" id="user-menu">
+        <li class="has-dropdown">
+          <i class="icofont-group"></i> Usuários
+        </li>
+      </a>
+    </ul>
+    <img id="monkey" alt="Monkey-Branch" src="./assets/images/monkey.png">
+  </aside>
+      
+      <section id="wrapper">
+      
+        <div class="p-4">
+          <div class="welcome">
+            <div class="content rounded-3 p-3">
+              <h1 class="fs-3">Chamados</h1>
+              <p class="mb-0"></p>
+            </div>
+          </div>
+      
+
+            <div id="content-loading">
+         
+            <div class="tweet">
+              <div class="skeleton">
+                 <div class="skeleton-avatar"></div>
+                 <div class="tweet-content">
+                    <div class="tweet-header">
+                       <div class="skeleton-line heading" style="width: 60%"></div>
+                    </div>
+                    <div class="tweet-text">
+                       <div class="skeleton-line" style="width: 90%"></div>
+                       <div class="skeleton-line" style="width: 100%"></div>
+                       <div class="skeleton-line" style="width: 35%"></div>
+                    </div>
+                    
+                    <div class="skeleton-img"></div>
+                 
+                    <div class="tweet-footer">
+                       <div class="skeleton-button rounded"></div>
+                       <div class="skeleton-button rounded"></div>
+                       <div class="skeleton-button rounded"></div>
+                       <div class="skeleton-button rounded"></div>
+                    </div>
+                 </div> 
+              </div>
+           </div> 
+     
+          </div>
+
+          <button id="export-excel-tickets"><span class="display-button">Exportar Excel</span><span class="loader"></span></button>
+          <section>
+            <section class="statis mt-4 text-center">
+              <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <div class="box bg-primary p-3">
+                    <i class="uil-eye"></i>
+                    <h3 id="solved-tickets-counter">0</h3>
+                    <p class="lead">Solucionados</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <div class="box bg-danger p-3">
+                    <i class="uil-user"></i>
+                    <h3 id="canceled-tickets-counter">0</h3>
+                    <p class="lead">Fechados</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                  <div class="box bg-warning p-3">
+                    <i class="uil-shopping-cart"></i>
+                    <h3 id="attendance-tickets-counter">0</h3>
+                    <p class="lead">Em atendimento </p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div class="box bg-success p-3">
+                    <i class="uil-feedback"></i>
+                    <h3 id="total-tickets-counter">0</h3>
+                    <p class="lead">Total de Chamados</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="container-table">
+
+              <div class="content-filters">
+                <select id="filter-type">
+                  <option value="null">Tipo de filtro</option>
+                  <option value="5">ID</option>
+                  <option value="0">Usuário</option>
+                  <option value="4">Responsável</option>
+                  <option value="1">Setor</option>
+                  <option value="2">Status</option>
+                  <option value="3">Data</option> 
+                </select>
+                <span id="cont-input"></span>
+                  <select id="search" >
+                    <option value="null">Selecione um filtro</option>
+
+                  </select>
+                </span>
+                <button id="add-filter">Adicionar</button>
+              </div>
+
+              <div id="filter-item">
+                
+              </div>
+              
+              <table id="table">
+           
+                  <thead >
+                      <tr>
+                          <th  id="checkbox-main"><input onchange="removeclickCheckBoxMain(this)" class="input-export-main" type="checkbox"></th>
+                          <th  data-sortable="true">Id <i class="icofont-rounded-up i-thead"></i></i></th>
+                          <th>Título<i class="icofont-rounded-up i-thead"></i></i></th>
+                          <th>Setores presente<i class="icofont-rounded-up i-thead"></i></i></th>
+                          <th>Status<i class="icofont-rounded-up i-thead"></i></i></th>
+                          <th>Abertura<i class="icofont-rounded-up i-thead"></i></i></th>
+                          <th>Tempo de resolução<i class="icofont-rounded-up i-thead"></i></i></th>
+                      </tr>
+                  </thead>
+                  <tbody id="problems-tbody">
+                     
+                  </tbody>
+              </table>
+              <aside id="info-problem" class="info-problem">
+                  <p id="problem-title">FAZENDO AQUELE TESTIZINHO BASICO</p>
+                  <div id="problem-description"></div>
+                  <p>Status <span id="status-problem"></span></p>
+                  <div>
+                    <p>Responsável</p>
+                    <ul id="responsible">
+
+                    </ul>
+                   </div>
+                   <div>
+                    <p>Observador</p>
+                    <ul id="observer">
+
+                    </ul>
+                   </div>
+                   <div>
+                    <p>Origem</p>
+                    <ul id="home-area">
+
+                    </ul>
+                   </div>
+                   <div>
+                    <p>Analise</p>
+                    <div>
+                      <p>causa</p>
+                      <div id="problem-cause"></div>
+                    </div>
+                 
+                    <div>
+                      <p>Ação</p>
+                      <div id="problem-action" ></div>
+                    </div>
+
+                    <div>
+                      <p>Quem</p>
+                      <div id="problem-who"></div>
+                    </div>
+                    
+                   </div>
+              </aside>
+              <div id="close-info-problem"></div>
+              </div>
+          </section>
+      
+        </div>
+      </section>
+      <script src="./assets/script/jquery/jquery.js"></script>
+      <script src="./assets/script/index.js"></script>
+      <script src="./assets/script/userLogin.js"></script>  
+      <script src="./assets/script/ticket.js"></script>    
+</body> 
+</html>

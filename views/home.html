@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/style/bootstrap/bootstrap5.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style/dashboard.css">
+    <link rel="stylesheet" href="./assets/style/mytable.css">
+    <title>Dashboard</title>
+</head>
+<style>
+   body{
+    background-color: #ffffff !important;
+  }
+</style>
+<body>
+  <div id="content-loading">      
+    <div class="tweet">
+      <div class="skeleton">
+         <div class="skeleton-avatar"></div>
+         <div class="tweet-content">
+            <div class="tweet-header">
+               <div class="skeleton-line heading" style="width: 60%"></div>
+            </div>
+            <div class="tweet-text">
+               <div class="skeleton-line" style="width: 90%"></div>
+               <div class="skeleton-line" style="width: 100%"></div>
+               <div class="skeleton-line" style="width: 35%"></div>
+            </div>
+            
+            <div class="skeleton-img"></div>
+         
+            <div class="tweet-footer">
+               <div class="skeleton-button rounded"></div>
+               <div class="skeleton-button rounded"></div>
+               <div class="skeleton-button rounded"></div>
+               <div class="skeleton-button rounded"></div>
+            </div>
+         </div> 
+      </div>
+   </div> 
+
+  </div>
+    
+  <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+    <div class="sidebar-header">
+      <div class="ms-2">
+        <div class="logo"><img src="./assets/images/logo.png" alt=""></div>
+        <h5 class="fs-6 mb-0">
+          <a class="text-decoration-none" id="user-name-sidebar" href="#"></a><span id="exit-vigilian">Sair</span>
+        </h5>
+        <p class="">Bem vindo</p>
+      </div>
+    </div>
+  
+    <div class="search position-relative text-center px-4 py-3 mt-2">
+    </div>
+  
+    <ul class="categories list-unstyled">
+      <a href="home">
+        <li class="has-dropdown">
+          <i class="icofont-home"></i> Dashboard
+        </li>
+      </a>
+      <a href="ticket">
+        <li class="">
+          <i class="icofont-warning-alt"></i> Chamados
+        </li>
+      </a>
+      <a href="problem" >
+        <li class="has-dropdown">
+          <i class="icofont-warning"></i> Anomalias
+        </li>
+      </a>
+      <a href="user" id="user-menu">
+        <li class="has-dropdown">
+          <i class="icofont-group"></i> Usuários
+        </li>
+      </a>
+    </ul>
+    <img id="monkey" alt="Monkey-Branch" src="./assets/images/monkey.png">
+  </aside>
+      
+      <section id="wrapper">
+        <div class="p-4">
+          <div class="welcome">
+            <div class="content rounded-3 p-3">
+              <h1 class="fs-3">Dashboard <span id="user-setor-dashboard"></span></h1>
+              <p class="mb-0"></p>
+            </div>
+          </div>
+      
+          <section class="statistics mt-4">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3">
+                  <i class="icon-dash icofont-warning"></i>
+                  <div class="ms-3">
+                    <div class="d-flex align-items-center">
+                      <h3 id="problems-total" class="mb-0"></h3> <span class="d-block ms-2">Total de Anomalias</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="box d-flex rounded-2 align-items-center mb-4 mb-lg-0 p-3">
+                  <i class="icon-dash icofont-warning-alt"></i>
+                  <div class="ms-3">
+                    <div class="d-flex align-items-center">
+                      <h3 id="tickets-total" class="mb-0"></h3> <span class="d-block ms-2">Total de Chamados</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="box d-flex rounded-2 align-items-center p-3">
+                  <i class="icon-dash icofont-notification"></i>
+                  <div class="ms-3 ">
+                    <div class="info-diary">
+                      <div class="mb-0 d-flex align-items-center"><span id="tickets-day" >0</span> Chamados hoje</div> 
+                      <div class="mb-0 d-flex align-items-center"><span id="problems-day">0</span> Anomalias hoje</div>
+                    </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="content-chart">
+            <section id="content-charts">
+              <div id="chart-pizza-problems" class="chats-style" style="width: 500px; height: 300px;"></div>
+              <div id="chart-pizza-tickets" class="chats-style" style="width: 500px; height: 300px;"></div>
+            </section>
+            <section id="content-charts-bar" style="margin-top: 17px">
+              <div class="cont-char-bar chats-style">
+                <div id="chart_problems" style="width: 550px; height: 280px;"></div>
+              </div>
+              <div class="cont-char-bar chats-style">
+                <div id="chart_tickets" style="width: 550px; height: 280px;"></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <script type="text/javascript" src="./assets/script/googleChats/index.js"></script>
+      <script src="./assets/script/jquery/jquery.js"></script>
+      <script src="./assets/script/index.js"></script>
+      <script src="./assets/script/userLogin.js"></script> 
+      <script src="./assets/script/charts.js"></script>
+      <script src="./assets/script/dashboard.js"></script>
+     
+</body> 
+</html>
