@@ -1,0 +1,430 @@
+
+:root{
+    --bg: #ffffff;
+}
+#login-form {
+    --dk-darker-bg: #2a2b3d;
+    --primary: #6D58FF;
+    --primary-dark: #362A89;
+    --dark: #e5e5e5;
+    --grey-dark: #e5e5e5;
+    --grey: #8A91B4;
+    --grey-light: #a6accd93;
+    --light: #BBC1E1;
+    --pale: #eceffc96;
+    --white: #FFFFFF;
+    --red: #F04949;
+    width: 100%;
+    max-width: 250px;
+  }
+  #login-form .logo {
+    width: 44px;
+    height: 44px;
+    display: block;
+    margin: 0 auto;
+    fill: var(--primary);
+  }
+  #login-form h1 {
+    margin: 24px 0;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #4a4a4a;
+  }
+  #login-form .input {
+    position: relative;
+  }
+
+ /* Cor de fundo do autocomplete */
+ input:-webkit-autofill,
+ input:-webkit-autofill:hover, 
+ input:-webkit-autofill:focus,
+ textarea:-webkit-autofill,
+ textarea:-webkit-autofill:hover
+ textarea:-webkit-autofill:focus,
+ select:-webkit-autofill,
+ select:-webkit-autofill:hover,
+ select:-webkit-autofill:focus {
+   border: 1px solid rgba(255, 255, 255, 0);
+   -webkit-text-fill-color: #282828 !important;
+   -webkit-box-shadow: 0 0 0px 1000px #e9e9e900 inset;
+   transition: background-color 5000s ease-in-out 0s;
+ }
+
+  #login-form .input label {
+    pointer-events: none;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    transform-origin: 0 50%;
+    transform: translateY(var(--label-y, 0)) scale(var(--label-scale, 1)) translateZ(0);
+    transition: transform 0.3s, color 0.3s;
+    color: #2c2c2c;
+  }
+
+  #error-login{
+    color: rgb(216, 19, 19);
+    font-weight: 500;
+    text-align: center;
+    min-height: 20px;
+  }
+
+  #login-form .password input:not(:placeholder-shown) + label, #login-form .password input:focus + label {
+    --label-y: -20px !important;
+    --label-scale: 0.99 !important;
+    --label-color: #4a4a4a !important;
+}
+
+  #login-form .password label{
+    top: 7px;
+  }
+  #login-form .input input {
+    width: 100%;
+    border-radius: 0;
+    /* -webkit-appearance: none; */
+  }
+  #login-form .input input:not(:placeholder-shown) + label, #login-form .input input:focus + label {
+    --label-y: -29px;
+    --label-scale: 0.99;
+    --label-color: #4a4a4a;
+  }
+  #login-form .input.email {
+    margin-bottom: 16px;
+  }
+  #login-form .input.email input {
+    background: none;
+    outline: none;
+    border: none;
+    color: #282828;
+    font-weight: 500;
+    font-family: inherit;
+    font-size: 16px;
+    letter-spacing: 0.025em;
+    line-height: 50px;
+    caret-color: var(--primary);
+    padding: 10px 0 0px 0;
+    box-shadow: inset 0 -2px 0px 0 #484848c4;
+  }
+  #login-form .input.password {
+    height: 34px;
+  }
+  #login-form .input.password .dots {
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 50%;
+    transform: translateY(-2px);
+  }
+  #login-form .input.password .dots i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #282828;
+    display: block;
+    margin-right: 4px;
+    animation: var(--name, scale-in) 0.05s linear forwards;
+  }
+  #login-form .input.password .dots i.remove {
+    --name: scale-out;
+  }
+  #login-form .input.password .dots i:nth-child(1) {
+    --delay: 393.5ms;
+  }
+  #login-form .input.password .dots i:nth-child(2) {
+    --delay: 387ms;
+  }
+  #login-form .input.password .dots i:nth-child(3) {
+    --delay: 380.5ms;
+  }
+  #login-form .input.password .dots i:nth-child(4) {
+    --delay: 374ms;
+  }
+  #login-form .input.password .dots i:nth-child(5) {
+    --delay: 367.5ms;
+  }
+  #login-form .input.password .dots i:nth-child(6) {
+    --delay: 361ms;
+  }
+  #login-form .input.password .dots i:nth-child(7) {
+    --delay: 354.5ms;
+  }
+  #login-form .input.password .dots i:nth-child(8) {
+    --delay: 348ms;
+  }
+  #login-form .input.password .dots i:nth-child(9) {
+    --delay: 341.5ms;
+  }
+  #login-form .input.password .dots i:nth-child(10) {
+    --delay: 335ms;
+  }
+  #login-form .input.password .dots i:nth-child(11) {
+    --delay: 328.5ms;
+  }
+  #login-form .input.password .dots i:nth-child(12) {
+    --delay: 322ms;
+  }
+  #login-form .input.password .dots i:nth-child(13) {
+    --delay: 315.5ms;
+  }
+  #login-form .input.password .dots i:nth-child(14) {
+    --delay: 309ms;
+  }
+  #login-form .input.password .dots i:nth-child(15) {
+    --delay: 302.5ms;
+  }
+  #login-form .input.password .cursor {
+    position: absolute;
+    height: 15px;
+    width: 1px;
+    left: 0;
+    top: 10px;
+    background: var(--primary);
+    opacity: 0;
+    transform: translateX(var(--cursor-x, 0));
+    transition: transform var(--cursor-duration, 0.1s);
+  }
+  #login-form .input.password input {
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border: 0;
+  }
+  
+  #login-form .input.password span{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #484848c4;
+  }
+
+  #login-form .input.password input:focus + label + .cursor {
+    animation: cursor 1s ease infinite;
+  }
+  #login-form .input .line, #login-form .input .tick {
+    pointer-events: none;
+    position: absolute;
+    left: var(--left, 0);
+    bottom: var(--bottom, -10px);
+    opacity: var(--opacity, 1);
+    transition: opacity 0s linear var(--tick-opacity-delay, 0.5s);
+  }
+  #login-form .input .line svg, #login-form .input .tick svg {
+    stroke: var(--line-stroke, var(--grey));
+    stroke-width: 1;
+    fill: none;
+    display: block;
+    width: var(--width, 900px);
+    height: var(--height, 22px);
+    transform: translateX(var(--x, var(--line-x, 0)));
+    transition: transform var(--line-x-duration, 0s) ease, stroke 0.3s;
+  }
+  #login-form .input .line {
+    overflow: hidden;
+    width: 100%;
+    transform-origin: 0 50%;
+  }
+  #login-form .input .tick {
+    --left: 100%;
+    --bottom: -1px;
+    --width: 32px;
+    --height: 28px;
+    --x: -16px;
+    --opacity: 0;
+  }
+  #login-form .input .tick svg {
+    stroke: var(--tick-stroke, var(--grey));
+    stroke-dasharray: 17 81;
+    stroke-dashoffset: var(--tick-offset, 34px);
+    transition: stroke-dashoffset 0.5s ease var(--tick-delay, 0s), stroke 0.5s ease var(--tick-delay, 0s);
+  }
+  #login-form button {
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    margin: 24px 0 0 0;
+    border-radius: 7px;
+    color: var(--c, #fff);
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    position: relative;
+    font-family: inherit;
+    font-weight: 500;
+    background:#3a3f82;
+    /* transition: color 0.3s, background 0.3s;
+    -webkit-appearance: none; */
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+  }
+  #login-form button:disabled {
+    --b: var(--pale);
+    --c: var(--grey-light);
+    cursor: not-allowed;
+  }
+  #login-form button svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -8px 0 0 -8px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 1.5;
+    opacity: var(--svg-o, 0);
+    transform: translateY(var(--svg-y, -16px)) rotate(-90deg) scale(var(--svg-s, 0.7)) translateZ(0);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  #login-form button svg circle:first-child {
+    stroke-opacity: 0.1;
+  }
+  #login-form button svg circle:last-child {
+    stroke-dasharray: 38px;
+    stroke-dashoffset: 114px;
+  }
+  #login-form button span {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 16px;
+    opacity: var(--span-o, 1);
+    transform: translateY(var(--span-y, 0)) scale(var(--span-s, 1)) translateZ(0);
+    transition: transform 0.3s, opacity 0.3s;
+    color: #dbdbdb;
+    font-weight: bold;
+  }
+  #login-form.processing:not(.error):not(.success) button {
+    --svg-y: 0;
+    --svg-s: 1;
+    --svg-o: 1;
+    --span-y: 16px;
+    --span-s: 0.7;
+    --span-o: 0;
+  }
+  #login-form.processing:not(.error):not(.success) button svg circle:last-child {
+    animation: load 1.2s linear 0.3s;
+  }
+  #login-form.processing.error {
+    --line-x: -80%;
+    --line-x-duration: 2s;
+    --line-stroke: var(--red);
+    --cursor-duration: 1s;
+  }
+  #login-form.processing.error .dots i {
+    animation: flip 0.4s linear var(--delay) forwards;
+  }
+  #login-form.processing.success .input .tick {
+    --opacity: 1;
+    --tick-offset: 98px;
+    --tick-delay: 0.45s;
+    --tick-opacity-delay: 0s;
+    --tick-stroke: var(--primary);
+    animation: tick 0.4s linear forwards;
+  }
+  #login-form.processing.success .input .line {
+    animation: line 0.5s linear forwards;
+  }
+  @keyframes tick {
+    70%, 80% {
+      transform: translateX(-10px);
+    }
+  }
+  @keyframes line {
+    70% {
+      transform: scaleX(0.8);
+    }
+  }
+  @keyframes flip {
+    25% {
+      transform: translateY(8px);
+    }
+    35% {
+      transform: translateY(12px);
+    }
+    65% {
+      transform: translateY(-4px);
+    }
+    100% {
+      transform: translateY(-12px) scale(0);
+    }
+  }
+  @keyframes load {
+    from {
+      stroke-dashoffset: 114px;
+    }
+    to {
+      stroke-dashoffset: 38px;
+    }
+  }
+  @keyframes scale-in {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  @keyframes scale-out {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(0);
+    }
+  }
+  @keyframes cursor {
+    50% {
+      opacity: 1;
+    }
+  }
+  html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  * {
+    box-sizing: inherit;
+  }
+  *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    min-height: 100vh;
+    display: flex;
+    font-family: 'Inter', 'Inter UI', Arial;
+    justify-content: center;
+    align-items: center;
+    color: var(--pale);
+    background-color: var(--bg)
+  }
+  body .dribbble {
+    position: fixed;
+    display: block;
+    right: 20px;
+    bottom: 20px;
+  }
+  body .dribbble img {
+    display: block;
+    height: 28px;
+  }
+  body .twitter {
+    position: fixed;
+    display: block;
+    right: 64px;
+    bottom: 14px;
+  }
+  body .twitter svg {
+    width: 32px;
+    height: 32px;
+    fill: #1da1f2;
+  }
+  

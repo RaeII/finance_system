@@ -6,7 +6,7 @@ const pathPublic = '../../../public'
 class ViewController {
 
   home = async (req , res) => {
-    return res.sendFile('index.html', { root: 'public' });
+    return res.sendFile('finance.html', { root: 'public' });
   };
   stages = async (req , res) => {
     console.log('PATH',path.join(__filename,pathPublic,'stages.html'))

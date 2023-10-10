@@ -1,0 +1,250 @@
+
+/* :root {
+	--dk-gray-100: #F3F4F6;
+	--dk-gray-200: #E5E7EB;
+	--dk-gray-300: #D1D5DB;
+	--dk-gray-400: #9CA3AF;
+	--dk-gray-500: #6B7280;
+	--dk-gray-600: #4B5563;
+	--dk-gray-800: #1F2937;
+	--dk-gray-900: #111827;
+	--navbar-bg-color: #6f6486;
+	--sidebar-bg-color: #252636;
+
+    --tr-hover: #3a3a68;
+	--bg-table: #313348;
+	--bg: #2a2b3d;
+	--border-table:#282830;
+	--color-table:#ffffff;
+	--color-filter:#cbd0d9;
+} */
+
+
+body{
+	background-color: var(--bg);
+	width: 100%;
+}
+
+.center{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container-table {
+	width: 100%;
+	background-color: var(--bg-table);
+	border-radius: 5px;
+	padding: 20px 20px;
+	margin: 20px 0 0 0;
+	box-shadow: 1px 1px 4px #cfcfcf;
+}
+
+#filter-item{
+    margin-top: 10px;
+    min-height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bold-blue {
+	font-weight: bold;
+	color: #0277BD;
+}
+
+input,select{
+	outline: none;
+    background-color: #eee6fc00;
+    border: 1px solid var(--border-table);
+	border-radius: 7px;
+	padding: 10px;
+	color: var(--color-table);
+	box-shadow: 2px 2px 4px #c7c7c78f;
+}
+
+select option {
+	background-color: var(--tr-hover);
+}
+
+/* select option:checked,
+select option:hover {
+  background-color: #b30000; /* Define a cor de fundo das opções quando estão selecionadas ou com o mouse em cima
+} 
+*/
+
+input::placeholder{
+	color: rgba(255, 255, 255, 0.514);
+}
+
+/*
+TABLE
+*/  
+
+table{
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    color: var(--color-table);;
+    border-radius: 7px 0 0 0;
+    border-collapse: separate;
+    border-radius: 10px;
+    border-spacing: 0;
+    border: solid 1px var(--border-table);
+}
+
+  
+thead  tr  th:first-child { border-radius: 7px 0 0 0; }
+thead  tr  th:last-child { border-radius:  0 7px 0 0}
+
+thead  tr  th:first-child { border-top-style: solid;}
+thead  tr  th:last-child { border-top-style: solid;}
+
+tbody tr:nth-child(even) {
+   background-color: #fbfbfb;;
+}
+
+th, td{
+    /* border:solid 1px var(--border-table); */
+    padding: 12px 15px;
+}
+
+th{
+	/* border: solid 1px var(--border-table); */
+	border-style: solid solid solid none;
+    border-width: 0;
+  }
+  
+  td{
+	/* border: solid 1px var(--border-table); */
+	/* s */
+  }
+
+tbody tr:hover{
+	background-color: var(--tr-hover);
+}
+
+thead{
+	border-bottom: solid 1px #ffffff65 !important;
+	text-align: justify;
+}
+
+i{
+	display: inline-block;
+}
+
+thead tr th{
+	cursor: pointer;
+	color: #545454;
+	font-weight: 600;
+	cursor: pointer;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #2c2e52;
+}
+
+/*Animation*/
+/*Order*/
+
+.i-thead{
+	opacity: 0;
+}
+
+#checkbox-main input{
+	box-shadow: none;
+}
+
+
+thead tr th:nth-child(2){
+	min-width: 63px;
+}
+
+
+thead tr th:hover .i-thead{
+	opacity: 1 !important;
+}
+
+.direction-order-tr{
+	transform: rotate(180deg) !important;
+	opacity: 1;
+}
+
+thead tr th:hover{
+	background-color: #161948;
+};
+
+
+
+.direction-order-inverse {
+	transform: rotate(0deg);
+	opacity: 1;
+}
+/*--==--*/
+
+/* tr:nth-child(even) {
+   background: var(--rows);
+   backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+ } */
+
+/*--=========--*/
+
+/*--==--
+
+filter item
+*/
+
+#filter-item span{
+	padding: 5px 2.5px 5px 5px; 
+	margin: 5px 10px;
+	border-radius: 5px;
+	background-color: var(--bg);
+	color: var(--color-filter);
+	cursor: pointer;
+	box-shadow: 1px 1px 4px #cfcfcf;
+}
+
+#filter-item span i{
+	color: var(--color-filter);
+	margin: 0 5px 0 0;
+}
+
+#filter-item span i:nth-child(2){
+	color: #4b556300;
+	margin: 0 0 0 2.5px;
+}
+
+#filter-item span:hover i:nth-child(2){
+	color: var(--color-filter) !important;
+}
+
+/* --tr-hover: #3a3a68;
+--bg-table: #313348; */
+
+#add-filter,#add-user	{
+	border: none;
+	border-radius: 7px;
+	background-color: var(--bg-button-filter);
+	box-shadow:  1px 1px 1px var(--border-table);
+	padding: 0 10px;
+    height: 36px;
+    color: #ffffffc9;
+    transition: .3s;
+}
+
+#add-filter:hover,#add-user:hover{
+  color: #ffffff;
+  box-shadow:  2px 2px 4px var(--border-table);
+}
+
+.bs-checkbox, .bs-checkbox > input{
+	cursor: pointer;
+}
+
+select option {
+	background-color: rgb(255, 255, 255) !important;
+  }
+  
+
+  
+
+ 
+/*--=========--*/
