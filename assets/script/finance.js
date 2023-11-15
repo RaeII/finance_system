@@ -61,7 +61,7 @@ const showResult = async (data) => {
   const total_month_vih = data.totalExpensesByUser * porcentagemVi
   $('#total-month-vih').html(total_month_vih.toFixed(2))
 
-  const aluguel_vih = 1350 * porcentagemVi
+  const aluguel_vih = 1485 * porcentagemVi
   $('#total-aluguel-vih').html(aluguel_vih.toFixed(2))
   $('#total-vih').html((total_month_vih + aluguel_vih).toFixed(2))
 }
