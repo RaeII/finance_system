@@ -52,8 +52,8 @@ const showResult = async (data) => {
 
 
   $('#total-month').html(data.totalExpensesByUser.toFixed(2))
-  const porcentagemIsrael = 4500/8000 
-  const porcentagemVi = 3500/8000
+  const porcentagemIsrael = 6000/10100 
+  const porcentagemVi = 4100/10100
   console.log('porcentagemIsrael',porcentagemIsrael)
   console.log('porcentagemVi',porcentagemVi)
   $('#total-israel').html((data.totalExpensesByUser * porcentagemIsrael).toFixed(2))
