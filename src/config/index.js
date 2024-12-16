@@ -1,7 +1,6 @@
 import dotenv from "dotenv";
-import env from './env.js'
 
-const envFound = dotenv.config({ path: `.env.${env}` });
+const envFound = dotenv.config({ path: `.env` });
 
 if (envFound.error) {
 
