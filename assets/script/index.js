@@ -108,7 +108,7 @@ const fetchApi = async (param, datas = {},method = 'GET') =>{
   
     if(method !== 'GET') options.body = JSON.stringify(datas);
     
-    const response = await fetch(`http://${hostname}:3000/api/${param}`, options)
+    const response = await fetch(`http://${hostname}:3003/api/${param}`, options)
     const json = await response.json();
   
     if(!json) {
